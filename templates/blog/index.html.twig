@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Hello BlogController!
+{% endblock %}
+
+{% block body %}
+	
+		<h1>Hello
+			{{ controller_name }}! </h1>
+		le numero de la page est {{numpage}}
+<br>
+<br>
+
+
+<br>
+
+<br>
+
+<a href="{{ path('addArticle') }}" > ajouter un article auto </a>
+<br>
+
+
+
+
+
+
+<br>
+
+<table>
+<tr>
+<th> titre </th>
+<th> contenu </th>
+
+<th> Date_creation </th>
+<th> voir article  </th>
+
+ {% for article in articles %}
+ <tr>
+    <td> {{ article.titre}} </td>  
+      <td> {{ article.contenu}} </td>   
+             	 
+<td> {{ article.dateCreation|date ("m/d/Y") }} </td>
+
+<td> <a href= "{{ path('voir_article', {id: article.id}) }}"> voir article </a> </td>
+
+
+
+ <br>       
+
+{% endfor %}
+
+
+	
+{% endblock %}
+

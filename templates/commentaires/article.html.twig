@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Hello BlogController!
+{% endblock %}
+
+{% block body %}
+	
+<h1>Hello
+	{{ controller_name }}! </h1>	
+<br>
+<br>
+
+
+
+{% for commentaire in articles.commentaires %}
+    {{ commentaire.contenu }} 
+     {{ commentaire.dateCreation|date('d/m/Y') }} :<br/>
+    {{ commentaire.pseudo }}
+
+
+{% endfor %}
+
+	
+{% endblock %}
+
